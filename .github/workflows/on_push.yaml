@@ -4,6 +4,7 @@ name: Push to main
 run-name: ${{ github.actor }} is testing out GitHub Actions
 on: [push]
 jobs:
+    runs-on: ubuntu-latest
     steps:
       - run: echo "Branch ${{ github.repository }} has new features"
       - name: Checkout code
