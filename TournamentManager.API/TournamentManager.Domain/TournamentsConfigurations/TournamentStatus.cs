@@ -1,5 +1,5 @@
 ﻿using System;
-namespace TournamentManager.Domain.Tournaments
+namespace TournamentManager.Domain.TournamentsConfigurations
 {
     public enum TournamentStatus
     {

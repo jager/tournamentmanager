@@ -1,7 +1,7 @@
 ﻿using System;
 using TournamentManager.Framework.Domain;
 
-namespace TournamentManager.Domain.Tournaments
+namespace TournamentManager.Domain.TournamentsConfigurations
 {
     public class TournamentId : ValueObject<int>
     {
