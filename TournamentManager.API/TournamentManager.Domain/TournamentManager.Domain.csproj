@@ -10,9 +10,6 @@
     <None Remove="Tournaments\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tournaments\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TournamentManager.Framework\TournamentManager.Framework.csproj" />
   </ItemGroup>
 </Project>

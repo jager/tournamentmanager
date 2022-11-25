@@ -1,5 +1,4 @@
-﻿using System;
-namespace TournamentManager.Domain
+﻿namespace TournamentManager.Domain
 {
     public enum StageType
     {

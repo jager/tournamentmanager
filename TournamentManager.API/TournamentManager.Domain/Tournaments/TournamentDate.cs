@@ -1,7 +1,7 @@
 ﻿using System;
 using TournamentManager.Framework.Domain;
 
-namespace TournamentManager.Domain.TournamentsConfigurations
+namespace TournamentManager.Domain.Tournaments
 {
     public class TournamentDate
     {
