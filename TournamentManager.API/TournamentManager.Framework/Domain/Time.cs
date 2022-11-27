@@ -22,6 +22,9 @@ namespace TournamentManager.Framework.Domain
 
             return new Time(hour, minute);
         }
+
+        public static Time Unknown => new Time(0, 0);
+        public bool IsUnknown => Hour == 0 && Minute == 0;
     }
 }
 

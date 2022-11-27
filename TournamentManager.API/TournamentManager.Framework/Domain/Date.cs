@@ -6,7 +6,11 @@ namespace TournamentManager.Framework.Domain
         public DateTime Value { get; }
         public Date(DateTime value)
         {
-            Value = new DateTime(Value.Year, Value.Month, Value.Day, 0, 0, 0);
+            Value = new DateTime(value.Year, value.Month, value.Day, 0, 0, 0);
         }
+
+        public static Date Unknown => new Date(DateTime.MinValue);
+
+        public bool IsUnknown => Value == DateTime.MinValue;
     }
 }

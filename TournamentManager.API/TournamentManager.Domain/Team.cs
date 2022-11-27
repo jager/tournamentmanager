@@ -1,5 +1,4 @@
-﻿using TournamentManager.Domain.Tournaments;
-using TournamentManager.Framework.Domain;
+﻿using TournamentManager.Framework.Domain;
 
 namespace TournamentManager.Domain;
 public class Team : StringValueObject
@@ -7,7 +6,7 @@ public class Team : StringValueObject
     private Team(string name) : base(name) { }
 
     public static Team Create(string name)
-        => string.IsNullOrEmpty(name)
+        => !string.IsNullOrEmpty(name)
             ? new Team(name)
             : Empty;
 
