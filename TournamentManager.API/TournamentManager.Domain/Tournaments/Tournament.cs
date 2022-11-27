@@ -7,7 +7,7 @@
         public TournamentStatus Status { get; private set; }
 
         public bool IsFinished => Status == TournamentStatus.Finished;
-        public bool IsStarted => Status == TournamentStatus.NotStarted;
+        public bool IsInProgress => Status != TournamentStatus.NotStarted;
 
         public Tournament(TournamentId id, TournamentConfiguration configuration, TournamentStatus status)
         {
@@ -31,7 +31,7 @@
 
         public void Start()
         {
-            if (!IsStarted || IsFinished)
+            if (!IsInProgress || IsFinished)
                 Status = TournamentStatus.InProgress;
         }
 

@@ -15,5 +15,12 @@ namespace TournamentManager.Domain.Tests
 
             areTheSame.Should().BeTrue();
         }
+
+        [Fact]
+        public void GivenStageOfTypeMainThenStageIsMain()
+        {
+            var stageOne = Stage.Create(StageName.Create("stage1"), new Group[0], StageType.Main);
+            stageOne.IsMain.Should().BeTrue();
+        }
     }
 }
