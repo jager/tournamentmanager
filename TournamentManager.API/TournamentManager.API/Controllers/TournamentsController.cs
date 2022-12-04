@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using TournamentManager.API.Requests;
 using TournamentManager.API.Responses;
+using TournamentManager.Application.Tournaments.CreateTournament;
+using TournamentManager.Domain;
+using TournamentManager.Domain.Tournaments;
+using TournamentManager.Framework.Domain;
 
 namespace TournamentManager.API.Controllers
 {
@@ -8,6 +13,13 @@ namespace TournamentManager.API.Controllers
     [ApiController]
     public class TournamentsController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public TournamentsController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpGet("{id}")]
         public TournamentResponse GetOne(int id)
         {
@@ -79,9 +91,14 @@ namespace TournamentManager.API.Controllers
         }
 
         [HttpPost] 
-        public int Post([FromBody]TournamentRequest tournament) 
+        public async Task<int> Post(TournamentRequest tournament) 
         {
-            return 1;
+            var command = new CreateTournamentCommand(TournamentName.Create(tournament.Name), 
+                                                      TournamentDate.Create(new Date(tournament.Start), new Date(tournament.End), Time.Create(tournament.StartTime)), 
+                                                      new Stage[] { Stage.Main(new Group[0]) }, 
+                                                      new Team[0]);
+            var tournamentId = await _mediator.Send(command);
+            return tournamentId.Value;
         }
 
         [HttpGet("Delete/{id}")]
