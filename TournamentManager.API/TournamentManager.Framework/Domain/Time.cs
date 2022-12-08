@@ -23,6 +23,15 @@ namespace TournamentManager.Framework.Domain
             return new Time(hour, minute);
         }
 
+        public static Time Create(string timeString)
+        {
+            var separators = new char[] { ':', '.' };
+            var time = timeString.Split(separators, StringSplitOptions.TrimEntries);
+            var hour = Convert.ToInt16(time[0]);
+            var minute = Convert.ToInt16(time[1]);
+            return Create(hour, minute);
+        }
+
         public static Time Unknown => new Time(0, 0);
         public bool IsUnknown => Hour == 0 && Minute == 0;
     }

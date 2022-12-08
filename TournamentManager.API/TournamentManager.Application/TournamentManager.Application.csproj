@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Tournaments\AddTeams\" />
+    <Folder Include="Tournaments\DeleteTeams\" />
+    <Folder Include="Tournaments\AddStages\" />
+    <Folder Include="Tournaments\DeleteStages\" />
+    <Folder Include="Tournaments\UpdateTournamentConfiguration\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TournamentManager.Domain\TournamentManager.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

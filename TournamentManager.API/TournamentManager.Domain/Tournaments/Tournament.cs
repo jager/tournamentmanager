@@ -55,6 +55,7 @@
             Configuration = Configuration.DeleteTeam(team);
         }
 
+        public void Save() { }
 
 
 
