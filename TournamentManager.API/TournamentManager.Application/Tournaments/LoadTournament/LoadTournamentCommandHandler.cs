@@ -3,11 +3,20 @@ using TournamentManager.Domain.Tournaments;
 
 namespace TournamentManager.Application.Tournaments.LoadTournament
 {
-    public class LoadTournamentCommandHandler : IRequestHandler<LoadTournamnetCommand, Tournament>
+    public class LoadTournamentCommandHandler : IRequestHandler<LoadTournamnetCommand, TournamentSnapshot>
     {
-        public async Task<Tournament> Handle(LoadTournamnetCommand request, CancellationToken cancellationToken)
+        private readonly ITournamentsRepository _tournamentRepository;
+
+
+        public LoadTournamentCommandHandler(ITournamentsRepository tournamentRepository)
         {
-            throw new NotImplementedException();
+            _tournamentRepository = tournamentRepository;
+        }
+
+        public async Task<TournamentSnapshot> Handle(LoadTournamnetCommand request, CancellationToken cancellationToken)
+        {
+            var tournament = await _tournamentRepository.LoadAsync(request.TournamentId, cancellationToken);
+            return tournament;
         }
     }
 }

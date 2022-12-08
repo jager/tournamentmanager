@@ -16,6 +16,7 @@
             Status = status;
         }
 
+
         public void Update(TournamentName name, TournamentDate date)
         {
             if (IsFinished) 
@@ -55,7 +56,23 @@
             Configuration = Configuration.DeleteTeam(team);
         }
 
-        public void Save() { }
+        public void AddTeams(Team[] teams)
+        {
+            if (teams == null || !teams.Any())
+                return;
+
+            foreach (var team in teams)
+                AddTeam(team);
+        }
+
+        public void AddStages(Stage[] stages)
+        {
+            if (stages == null || !stages.Any())
+                return;
+
+            foreach (var stage in stages)
+                AddStage(stage);
+        }
 
 
 

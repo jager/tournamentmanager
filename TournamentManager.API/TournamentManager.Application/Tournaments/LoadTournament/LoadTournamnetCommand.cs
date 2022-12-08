@@ -8,7 +8,7 @@ using TournamentManager.Domain.Tournaments;
 
 namespace TournamentManager.Application.Tournaments.LoadTournament
 {
-    public class LoadTournamnetCommand : IRequest<Tournament>
+    public class LoadTournamnetCommand : IRequest<TournamentSnapshot>
     {
         public TournamentId TournamentId { get; }
 

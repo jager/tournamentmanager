@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using TournamentManager.API.Requests;
 using TournamentManager.API.Responses;
 using TournamentManager.Application.Tournaments.CreateTournament;
+using TournamentManager.Application.Tournaments.FindTournaments;
+using TournamentManager.Application.Tournaments.LoadTournament;
 using TournamentManager.Domain;
 using TournamentManager.Domain.Tournaments;
 using TournamentManager.Framework.Domain;
@@ -21,73 +23,16 @@ namespace TournamentManager.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public TournamentResponse GetOne(int id)
+        public async Task<TournamentSnapshot> GetOne(int id)
         {
-            return new TournamentResponse
-            {
-                Id = 1,
-                Name = "Test",
-                Start = new DateTime(2022, 11, 30, 10, 0, 0),
-                End = new DateTime(2022, 11, 30, 20, 0, 0),
-                StartTime = "10:00",
-                Teams = new string[] { "test1", "test2", "Test3" },
-                Stages = new StageResponse[]
-                {
-                    new StageResponse
-                    {
-                        Name = "stage name",
-                        Gropus = new string [] {"group1", "group2"},
-                        StageTypeId = 1,
-                        StageTypeName = "main stage"
-                    }
-                }
-            };
+            var command = new LoadTournamnetCommand(new TournamentId(id));
+            return await _mediator.Send(command);
         }
 
         [HttpGet]
-        public TournamentResponse[] GetAll()
+        public async Task<TournamentSnapshot[]> GetAll()
         {
-            return new TournamentResponse[]
-            {
-                new TournamentResponse
-                {
-                    Id = 1,
-                    Name = "Test",
-                    Start = new DateTime(2022, 11, 30, 10, 0, 0),
-                    End = new DateTime(2022, 11, 30, 20, 0, 0),
-                    StartTime = "10:00",
-                    Teams = new string[] { "test1", "test2", "Test3" },
-                    Stages = new StageResponse[]
-                   {
-                        new StageResponse
-                        {
-                            Name = "stage name",
-                            Gropus = new string [] {"group1", "group2"},
-                            StageTypeId = 1,
-                            StageTypeName = "main stage"
-                        }
-                   }
-                },
-                new TournamentResponse
-                {
-                    Id = 1,
-                    Name = "Test",
-                    Start = new DateTime(2022, 11, 30, 10, 0, 0),
-                    End = new DateTime(2022, 11, 30, 20, 0, 0),
-                    StartTime = "10:00",
-                    Teams = new string[] { "test1", "test2", "Test3" },
-                    Stages = new StageResponse[]
-                   {
-                        new StageResponse
-                        {
-                            Name = "stage name",
-                            Gropus = new string [] {"group1", "group2"},
-                            StageTypeId = 1,
-                            StageTypeName = "main stage"
-                        }
-                   }
-                }
-            };
+            return await _mediator.Send(new FindTournamentsCommand());
         }
 
         [HttpPost] 
@@ -104,10 +49,7 @@ namespace TournamentManager.API.Controllers
         [HttpGet("Delete/{id}")]
         public TournamentDeleteResponse Delete(int id)
         {
-            return new TournamentDeleteResponse
-            {
-                Amount = 1
-            };
+            throw new NotImplementedException();
         }
     }
 }

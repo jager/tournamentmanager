@@ -37,6 +37,14 @@ namespace TournamentManager.Domain.Tournaments
         public static TournamentDate Create(DateTime date)
             => Create(new Date(date), new Date(date), Time.Create(date.Hour, date.Minute));
 
+        public static TournamentDate Create(DateTime start, DateTime end, string time)
+        {
+            var dateStart = new Date(start);
+            var dateEnd = new Date(end);
+            var timeStart = Time.Create(time);
+            return Create(dateStart, dateEnd, timeStart);
+        }
+
         public static TournamentDate Unplanned => Create(null, null, null);
 
         public bool IsScheduled => !From.IsUnknown && !To.IsUnknown && !Start.IsUnknown;
