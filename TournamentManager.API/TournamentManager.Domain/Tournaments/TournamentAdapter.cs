@@ -11,16 +11,11 @@
                 tournament.Configuration.Date.To.Value,
                 tournament.Configuration.Date.Start.ToString(),
                 tournament.Configuration.Teams?.Select(x => x.Value).ToArray(),
-                tournament.Configuration.Stages?.Select(x => ToStageSnapshot(x)).ToArray(),
+                tournament.Configuration.Stages?.Select(x => x.ToSnapshot()).ToArray(),
                 (int)tournament.Status
                 );
         }
 
-        public static StageSnapshot ToStageSnapshot(Stage stage)
-        {
-            var stageToSnapshot = stage ?? Stage.Main(new Group[0]);
-            var groups = stageToSnapshot.Groups?.Select(x => x.Value).ToArray();
-            return new StageSnapshot(stageToSnapshot.Name.Value, groups, (int)stageToSnapshot.Type);
-        }
+        
     }
 }

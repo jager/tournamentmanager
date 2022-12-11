@@ -8,7 +8,7 @@ namespace TournamentManager.Domain
         private StageName(string name) : base(name) { }
 
         public static StageName Create(string name)
-            => string.IsNullOrEmpty(name)
+            => !string.IsNullOrEmpty(name)
                 ? new StageName(name)
                 : Empty;
 
