@@ -1,7 +1,4 @@
-﻿using MediatR;
-using TournamentManager.Domain.Tournaments;
-
-namespace TournamentManager.Application.Tournaments.LoadTournament
+﻿namespace TournamentManager.Application.Tournaments.LoadTournament
 {
     public class LoadTournamentCommandHandler : IRequestHandler<LoadTournamnetCommand, TournamentSnapshot>
     {

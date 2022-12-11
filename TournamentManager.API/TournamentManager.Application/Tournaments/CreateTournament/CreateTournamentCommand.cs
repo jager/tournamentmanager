@@ -1,10 +1,6 @@
-﻿using MediatR;
-using TournamentManager.Domain;
-using TournamentManager.Domain.Tournaments;
-
-namespace TournamentManager.Application.Tournaments.CreateTournament
+﻿namespace TournamentManager.Application.Tournaments.CreateTournament
 {
-    public class CreateTournamentCommand : IRequest<TournamentId>
+    public class CreateTournamentCommand : IRequest
     {
         public TournamentName Name { get; }
         public TournamentDate Date { get; }

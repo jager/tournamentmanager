@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TournamentManager.API.Requests;
 using TournamentManager.API.Responses;
 using TournamentManager.Application.Tournaments.CreateTournament;
+using TournamentManager.Application.Tournaments.DeleteTournament;
 using TournamentManager.Application.Tournaments.FindTournaments;
 using TournamentManager.Application.Tournaments.LoadTournament;
 using TournamentManager.Domain;
@@ -36,20 +37,20 @@ namespace TournamentManager.API.Controllers
         }
 
         [HttpPost] 
-        public async Task<int> Post(TournamentRequest tournament) 
+        public async Task Post(TournamentRequest tournament) 
         {
             var command = new CreateTournamentCommand(TournamentName.Create(tournament.Name), 
                                                       TournamentDate.Create(new Date(tournament.Start), new Date(tournament.End), Time.Create(tournament.StartTime)), 
                                                       new Stage[] { Stage.Main(new Group[0]) }, 
                                                       new Team[0]);
-            var tournamentId = await _mediator.Send(command);
-            return tournamentId.Value;
+            await _mediator.Send(command);
         }
 
         [HttpGet("Delete/{id}")]
-        public TournamentDeleteResponse Delete(int id)
+        public async void Delete(int id)
         {
-            throw new NotImplementedException();
+            var command = new DeleteTournamentCommand(new TournamentId(id));
+            await _mediator.Send(command);
         }
     }
 }

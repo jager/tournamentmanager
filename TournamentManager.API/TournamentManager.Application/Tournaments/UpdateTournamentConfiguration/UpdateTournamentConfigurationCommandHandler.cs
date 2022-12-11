@@ -1,8 +1,4 @@
-﻿using System;
-using MediatR;
-using TournamentManager.Domain.Tournaments;
-
-namespace TournamentManager.Application.Tournaments.UpdateTournamentConfiguration
+﻿namespace TournamentManager.Application.Tournaments.UpdateTournamentConfiguration
 {
     public class UpdateTournamentConfigurationCommandHandler : IRequestHandler<UpdateTournamentConfigurationCommand>
     {

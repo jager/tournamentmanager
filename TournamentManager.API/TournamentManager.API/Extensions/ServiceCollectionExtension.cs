@@ -1,5 +1,6 @@
 ﻿using Hellang.Middleware.ProblemDetails;
 using Marten;
+using TournamentManager.Db.Pg.DocumentStore;
 using TournamentManager.Domain.Tournaments;
 
 namespace TournamentManager.API.Extensions
@@ -37,56 +38,5 @@ namespace TournamentManager.API.Extensions
         }
     }
 
-    public class TournamentsRepository : ITournamentsRepository
-    {
-        private readonly IDocumentStore _store;
-
-        public TournamentsRepository(IDocumentStore store)
-        {
-            _store = store;
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(CancellationToken token)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TournamentSnapshot[] Find()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<TournamentSnapshot[]> FindAsync(CancellationToken token)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TournamentSnapshot Load(TournamentId id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<TournamentSnapshot> LoadAsync(TournamentId id, CancellationToken token)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TournamentId Save(Tournament tournament)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<TournamentId> SaveAsync(Tournament tournament, CancellationToken token)
-        {
-            await using var session = _store.LightweightSession();
-            session.Store(TournamentAdapter.ToSnapshot(tournament));
-            await session.SaveChangesAsync();
-            return new TournamentId(1);
-        }
-    }
+    
 }

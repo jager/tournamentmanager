@@ -34,6 +34,11 @@ namespace TournamentManager.Framework.Domain
 
         public static Time Unknown => new Time(0, 0);
         public bool IsUnknown => Hour == 0 && Minute == 0;
+
+        public override string ToString()
+        {
+            return $"{Hour}:{Minute}";
+        }
     }
 }
 
