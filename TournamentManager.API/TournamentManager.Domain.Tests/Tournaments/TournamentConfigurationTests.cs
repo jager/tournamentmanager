@@ -55,7 +55,7 @@ namespace TournamentManager.Domain.Tests.Tournaments
             var stageToDelete = configuration.Stages.Last();
             var stagesAmount = configuration.Stages.Count;
 
-            configuration.DeleteStage(stageToDelete);
+            configuration.DeleteStage(stageToDelete.Type);
 
             configuration.Stages.Count.Should().Be(stagesAmount - 1);
         }
@@ -67,7 +67,7 @@ namespace TournamentManager.Domain.Tests.Tournaments
             var stageToDelete = configuration.Stages.Single(x => x.IsMain);
             var stagesAmount = configuration.Stages.Count;
 
-            configuration.DeleteStage(stageToDelete);
+            configuration.DeleteStage(stageToDelete.Type);
 
             configuration.Stages.Count.Should().Be(stagesAmount - 1);
         }
@@ -79,7 +79,7 @@ namespace TournamentManager.Domain.Tests.Tournaments
             var stagesToDelete = configuration.Stages;
 
             foreach(var stageToDelete in stagesToDelete)
-                configuration.DeleteStage(stageToDelete);
+                configuration.DeleteStage(stageToDelete.Type);
 
             configuration.Stages.Count.Should().Be(1);
         }

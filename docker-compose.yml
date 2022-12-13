@@ -1,0 +1,17 @@
+services:
+  db_postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: abcd1234
+      POSTGRES_DB: tournamentmanager
+    ports:
+      - 5432:5432
+
+  logs_seq:
+    image: datalust/seq:latest
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:80

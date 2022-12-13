@@ -41,9 +41,9 @@
             Configuration = Configuration.AddStage(stage);
         }
 
-        public void DeleteStage(Stage stage)
+        public void DeleteStage(StageType stageType)
         {
-            Configuration = Configuration.DeleteStage(stage);
+            Configuration = Configuration.DeleteStage(stageType);
         }
 
         public void AddTeam(Team team)

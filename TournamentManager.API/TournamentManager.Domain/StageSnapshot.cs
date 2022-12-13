@@ -3,9 +3,9 @@ namespace TournamentManager.Domain
 {
     public class StageSnapshot
     {
-        public string Name { get; }
-        public string[] Groups { get; }
-        public int TypeId { get; }
+        public string Name { get; set; }
+        public string[] Groups { get; set; }
+        public int TypeId { get; set; }
 
         public StageSnapshot(string name, string[] groups, int typeId)
         {

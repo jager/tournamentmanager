@@ -3,12 +3,12 @@
     public class DeleteStagesCommand : IRequest
     {
         public TournamentId TournamentId { get; }
-        public Stage Stage { get; }
+        public StageType StageType { get; }
 
-        public DeleteStagesCommand(TournamentId tournamentId, Stage stage)
+        public DeleteStagesCommand(TournamentId tournamentId, StageType stageType)
         {
             TournamentId = tournamentId;
-            Stage = stage;
+            StageType = stageType;
         }
     }
 }

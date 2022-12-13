@@ -20,18 +20,18 @@ namespace TournamentManager.API.Controllers
         }
 
         [HttpPost("{tournamentId}")]
-        public async Task Post(TeamRequest teamRequest, int tournamentId)
+        public async Task Post(TeamRequest teamRequest, string tournamentId)
         {
             var teams = new Team[] { TeamAdapter.FromRequest(teamRequest) };
-            var command = new AddTeamsCommand(new TournamentId(tournamentId), teams);
+            var command = new AddTeamsCommand(TournamentId.Create(tournamentId), teams);
             await _mediator.Send(command);
         }
 
         [HttpPost("Delete/{tournamentId}")]
-        public async Task Delete(TeamRequest teamRequest, int tournamentId)
+        public async Task Delete(TeamRequest teamRequest, string tournamentId)
         {
             var team = TeamAdapter.FromRequest(teamRequest);
-            var command = new DeleteTeamsCommand(new TournamentId(tournamentId), team);
+            var command = new DeleteTeamsCommand(TournamentId.Create(tournamentId), team);
             await _mediator.Send(command);
         }
     }

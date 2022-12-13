@@ -8,7 +8,7 @@ namespace TournamentManager.Domain
         private Group(string name) : base(name) { }
 
         public static Group Create(string name)
-            => string.IsNullOrEmpty(name)
+            => !string.IsNullOrEmpty(name)
                 ? new Group(name)
                 : Empty;
 

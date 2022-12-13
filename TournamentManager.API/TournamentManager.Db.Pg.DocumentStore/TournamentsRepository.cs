@@ -1,5 +1,6 @@
 ﻿using Marten;
 using TournamentManager.Domain.Tournaments;
+using Weasel.Postgresql;
 
 namespace TournamentManager.Db.Pg.DocumentStore
 {
@@ -55,7 +56,7 @@ namespace TournamentManager.Db.Pg.DocumentStore
 
         public async Task SaveAsync(Tournament tournament, CancellationToken token)
         {
-            await using var session = _store.LightweightSession();
+            await using var session = _store.OpenSession();
             var snapshot = TournamentAdapter.ToSnapshot(tournament);
             session.Store(snapshot);
             await session.SaveChangesAsync();

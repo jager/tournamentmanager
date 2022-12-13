@@ -13,7 +13,7 @@
         {
             var tournamentSnapshot = await _tournamentsRepository.LoadAsync(request.TournamentId, cancellationToken);
             var tournament = TournamentFactory.FromSnapshot(tournamentSnapshot);
-            tournament.DeleteStage(request.Stage);
+            tournament.DeleteStage(request.StageType);
 
             await _tournamentsRepository.SaveAsync(tournament, cancellationToken);
 

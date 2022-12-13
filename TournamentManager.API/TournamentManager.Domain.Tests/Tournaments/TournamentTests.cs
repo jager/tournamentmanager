@@ -85,7 +85,7 @@ namespace TournamentManager.Domain.Tests.Tournaments
             var stagesAmount = tournament.Configuration.Stages.Count;
             var stage = Stage.Create(StageName.Create("newextrastage3"), new Group[0], StageType.Group);
             tournament.AddStage(stage);
-            tournament.DeleteStage(stage);
+            tournament.DeleteStage(stage.Type);
             tournament.Configuration.Stages.Count.Should().Be(stagesAmount);
         }
 

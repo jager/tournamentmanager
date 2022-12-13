@@ -33,6 +33,7 @@ namespace TournamentManager.API.Extensions
             services.AddMarten(opts =>
             {
                 opts.Connection(configuration.GetConnectionString("postgres"));
+                //opts.Storage.Add(new MatterId(opts, 1000));
             })
             .OptimizeArtifactWorkflow();
         }

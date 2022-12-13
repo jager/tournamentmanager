@@ -42,10 +42,11 @@ namespace TournamentManager.Domain.Tournaments
             return new TournamentConfiguration(Name, Date, stages, Teams);
         }
 
-        public TournamentConfiguration DeleteStage(Stage stage)
+        public TournamentConfiguration DeleteStage(StageType stageType)
         {            
             var stages = Stages != null ? Stages : new HashSet<Stage>();
-            if (stages.Count > 1)
+            var stage = stages.FirstOrDefault(x => x.Type == stageType);
+            if (stages.Count > 1 && stage != null)
                 stages.Remove(stage);
 
             return new TournamentConfiguration(Name, Date, stages, Teams);

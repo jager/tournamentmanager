@@ -14,14 +14,14 @@ using Weasel.Postgresql;
 namespace Marten.Generated.DocumentStorage
 {
     // START: UpsertTournamentSnapshotOperation2118757069
-    public class UpsertTournamentSnapshotOperation2118757069 : Marten.Internal.Operations.StorageOperation<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class UpsertTournamentSnapshotOperation2118757069 : Marten.Internal.Operations.StorageOperation<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly TournamentManager.Domain.Tournaments.TournamentSnapshot _document;
-        private readonly int _id;
-        private readonly System.Collections.Generic.Dictionary<int, System.Guid> _versions;
+        private readonly System.Guid _id;
+        private readonly System.Collections.Generic.Dictionary<System.Guid, System.Guid> _versions;
         private readonly Marten.Schema.DocumentMapping _mapping;
 
-        public UpsertTournamentSnapshotOperation2118757069(TournamentManager.Domain.Tournaments.TournamentSnapshot document, int id, System.Collections.Generic.Dictionary<int, System.Guid> versions, Marten.Schema.DocumentMapping mapping) : base(document, id, versions, mapping)
+        public UpsertTournamentSnapshotOperation2118757069(TournamentManager.Domain.Tournaments.TournamentSnapshot document, System.Guid id, System.Collections.Generic.Dictionary<System.Guid, System.Guid> versions, Marten.Schema.DocumentMapping mapping) : base(document, id, versions, mapping)
         {
             _document = document;
             _id = id;
@@ -41,7 +41,7 @@ namespace Marten.Generated.DocumentStorage
 
         public override NpgsqlTypes.NpgsqlDbType DbType()
         {
-            return NpgsqlTypes.NpgsqlDbType.Integer;
+            return NpgsqlTypes.NpgsqlDbType.Uuid;
         }
 
 
@@ -52,7 +52,7 @@ namespace Marten.Generated.DocumentStorage
             // .Net Class Type
             parameters[1].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
             parameters[1].Value = _document.GetType().FullName;
-            parameters[2].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+            parameters[2].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Uuid;
             parameters[2].Value = document.Id;
             setVersionParameter(parameters[3]);
         }
@@ -83,14 +83,14 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: InsertTournamentSnapshotOperation2118757069
-    public class InsertTournamentSnapshotOperation2118757069 : Marten.Internal.Operations.StorageOperation<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class InsertTournamentSnapshotOperation2118757069 : Marten.Internal.Operations.StorageOperation<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly TournamentManager.Domain.Tournaments.TournamentSnapshot _document;
-        private readonly int _id;
-        private readonly System.Collections.Generic.Dictionary<int, System.Guid> _versions;
+        private readonly System.Guid _id;
+        private readonly System.Collections.Generic.Dictionary<System.Guid, System.Guid> _versions;
         private readonly Marten.Schema.DocumentMapping _mapping;
 
-        public InsertTournamentSnapshotOperation2118757069(TournamentManager.Domain.Tournaments.TournamentSnapshot document, int id, System.Collections.Generic.Dictionary<int, System.Guid> versions, Marten.Schema.DocumentMapping mapping) : base(document, id, versions, mapping)
+        public InsertTournamentSnapshotOperation2118757069(TournamentManager.Domain.Tournaments.TournamentSnapshot document, System.Guid id, System.Collections.Generic.Dictionary<System.Guid, System.Guid> versions, Marten.Schema.DocumentMapping mapping) : base(document, id, versions, mapping)
         {
             _document = document;
             _id = id;
@@ -110,7 +110,7 @@ namespace Marten.Generated.DocumentStorage
 
         public override NpgsqlTypes.NpgsqlDbType DbType()
         {
-            return NpgsqlTypes.NpgsqlDbType.Integer;
+            return NpgsqlTypes.NpgsqlDbType.Uuid;
         }
 
 
@@ -121,7 +121,7 @@ namespace Marten.Generated.DocumentStorage
             // .Net Class Type
             parameters[1].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
             parameters[1].Value = _document.GetType().FullName;
-            parameters[2].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+            parameters[2].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Uuid;
             parameters[2].Value = document.Id;
             setVersionParameter(parameters[3]);
         }
@@ -152,14 +152,14 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: UpdateTournamentSnapshotOperation2118757069
-    public class UpdateTournamentSnapshotOperation2118757069 : Marten.Internal.Operations.StorageOperation<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class UpdateTournamentSnapshotOperation2118757069 : Marten.Internal.Operations.StorageOperation<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly TournamentManager.Domain.Tournaments.TournamentSnapshot _document;
-        private readonly int _id;
-        private readonly System.Collections.Generic.Dictionary<int, System.Guid> _versions;
+        private readonly System.Guid _id;
+        private readonly System.Collections.Generic.Dictionary<System.Guid, System.Guid> _versions;
         private readonly Marten.Schema.DocumentMapping _mapping;
 
-        public UpdateTournamentSnapshotOperation2118757069(TournamentManager.Domain.Tournaments.TournamentSnapshot document, int id, System.Collections.Generic.Dictionary<int, System.Guid> versions, Marten.Schema.DocumentMapping mapping) : base(document, id, versions, mapping)
+        public UpdateTournamentSnapshotOperation2118757069(TournamentManager.Domain.Tournaments.TournamentSnapshot document, System.Guid id, System.Collections.Generic.Dictionary<System.Guid, System.Guid> versions, Marten.Schema.DocumentMapping mapping) : base(document, id, versions, mapping)
         {
             _document = document;
             _id = id;
@@ -179,7 +179,7 @@ namespace Marten.Generated.DocumentStorage
 
         public override NpgsqlTypes.NpgsqlDbType DbType()
         {
-            return NpgsqlTypes.NpgsqlDbType.Integer;
+            return NpgsqlTypes.NpgsqlDbType.Uuid;
         }
 
 
@@ -190,7 +190,7 @@ namespace Marten.Generated.DocumentStorage
             // .Net Class Type
             parameters[1].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar;
             parameters[1].Value = _document.GetType().FullName;
-            parameters[2].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer;
+            parameters[2].NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Uuid;
             parameters[2].Value = document.Id;
             setVersionParameter(parameters[3]);
         }
@@ -257,7 +257,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: LightweightTournamentSnapshotSelector2118757069
-    public class LightweightTournamentSnapshotSelector2118757069 : Marten.Internal.CodeGeneration.DocumentSelectorWithVersions<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>, Marten.Linq.Selectors.ISelector<TournamentManager.Domain.Tournaments.TournamentSnapshot>
+    public class LightweightTournamentSnapshotSelector2118757069 : Marten.Internal.CodeGeneration.DocumentSelectorWithVersions<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>, Marten.Linq.Selectors.ISelector<TournamentManager.Domain.Tournaments.TournamentSnapshot>
     {
         private readonly Marten.Internal.IMartenSession _session;
         private readonly Marten.Schema.DocumentMapping _mapping;
@@ -272,7 +272,7 @@ namespace Marten.Generated.DocumentStorage
 
         public TournamentManager.Domain.Tournaments.TournamentSnapshot Resolve(System.Data.Common.DbDataReader reader)
         {
-            var id = reader.GetFieldValue<int>(0);
+            var id = reader.GetFieldValue<System.Guid>(0);
 
             TournamentManager.Domain.Tournaments.TournamentSnapshot document;
             document = _serializer.FromJson<TournamentManager.Domain.Tournaments.TournamentSnapshot>(reader, 1);
@@ -283,7 +283,7 @@ namespace Marten.Generated.DocumentStorage
 
         public async System.Threading.Tasks.Task<TournamentManager.Domain.Tournaments.TournamentSnapshot> ResolveAsync(System.Data.Common.DbDataReader reader, System.Threading.CancellationToken token)
         {
-            var id = await reader.GetFieldValueAsync<int>(0, token);
+            var id = await reader.GetFieldValueAsync<System.Guid>(0, token);
 
             TournamentManager.Domain.Tournaments.TournamentSnapshot document;
             document = await _serializer.FromJsonAsync<TournamentManager.Domain.Tournaments.TournamentSnapshot>(reader, 1, token).ConfigureAwait(false);
@@ -297,7 +297,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: IdentityMapTournamentSnapshotSelector2118757069
-    public class IdentityMapTournamentSnapshotSelector2118757069 : Marten.Internal.CodeGeneration.DocumentSelectorWithIdentityMap<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>, Marten.Linq.Selectors.ISelector<TournamentManager.Domain.Tournaments.TournamentSnapshot>
+    public class IdentityMapTournamentSnapshotSelector2118757069 : Marten.Internal.CodeGeneration.DocumentSelectorWithIdentityMap<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>, Marten.Linq.Selectors.ISelector<TournamentManager.Domain.Tournaments.TournamentSnapshot>
     {
         private readonly Marten.Internal.IMartenSession _session;
         private readonly Marten.Schema.DocumentMapping _mapping;
@@ -312,7 +312,7 @@ namespace Marten.Generated.DocumentStorage
 
         public TournamentManager.Domain.Tournaments.TournamentSnapshot Resolve(System.Data.Common.DbDataReader reader)
         {
-            var id = reader.GetFieldValue<int>(0);
+            var id = reader.GetFieldValue<System.Guid>(0);
             if (_identityMap.TryGetValue(id, out var existing)) return existing;
 
             TournamentManager.Domain.Tournaments.TournamentSnapshot document;
@@ -325,7 +325,7 @@ namespace Marten.Generated.DocumentStorage
 
         public async System.Threading.Tasks.Task<TournamentManager.Domain.Tournaments.TournamentSnapshot> ResolveAsync(System.Data.Common.DbDataReader reader, System.Threading.CancellationToken token)
         {
-            var id = await reader.GetFieldValueAsync<int>(0, token);
+            var id = await reader.GetFieldValueAsync<System.Guid>(0, token);
             if (_identityMap.TryGetValue(id, out var existing)) return existing;
 
             TournamentManager.Domain.Tournaments.TournamentSnapshot document;
@@ -341,7 +341,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: DirtyTrackingTournamentSnapshotSelector2118757069
-    public class DirtyTrackingTournamentSnapshotSelector2118757069 : Marten.Internal.CodeGeneration.DocumentSelectorWithDirtyChecking<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>, Marten.Linq.Selectors.ISelector<TournamentManager.Domain.Tournaments.TournamentSnapshot>
+    public class DirtyTrackingTournamentSnapshotSelector2118757069 : Marten.Internal.CodeGeneration.DocumentSelectorWithDirtyChecking<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>, Marten.Linq.Selectors.ISelector<TournamentManager.Domain.Tournaments.TournamentSnapshot>
     {
         private readonly Marten.Internal.IMartenSession _session;
         private readonly Marten.Schema.DocumentMapping _mapping;
@@ -356,7 +356,7 @@ namespace Marten.Generated.DocumentStorage
 
         public TournamentManager.Domain.Tournaments.TournamentSnapshot Resolve(System.Data.Common.DbDataReader reader)
         {
-            var id = reader.GetFieldValue<int>(0);
+            var id = reader.GetFieldValue<System.Guid>(0);
             if (_identityMap.TryGetValue(id, out var existing)) return existing;
 
             TournamentManager.Domain.Tournaments.TournamentSnapshot document;
@@ -370,7 +370,7 @@ namespace Marten.Generated.DocumentStorage
 
         public async System.Threading.Tasks.Task<TournamentManager.Domain.Tournaments.TournamentSnapshot> ResolveAsync(System.Data.Common.DbDataReader reader, System.Threading.CancellationToken token)
         {
-            var id = await reader.GetFieldValueAsync<int>(0, token);
+            var id = await reader.GetFieldValueAsync<System.Guid>(0, token);
             if (_identityMap.TryGetValue(id, out var existing)) return existing;
 
             TournamentManager.Domain.Tournaments.TournamentSnapshot document;
@@ -387,7 +387,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: QueryOnlyTournamentSnapshotDocumentStorage2118757069
-    public class QueryOnlyTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.QueryOnlyDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class QueryOnlyTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.QueryOnlyDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly Marten.Schema.DocumentMapping _document;
 
@@ -398,7 +398,7 @@ namespace Marten.Generated.DocumentStorage
 
 
 
-        public override int AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
+        public override System.Guid AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
         {
             return document.Id;
         }
@@ -410,7 +410,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpdateTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -423,7 +423,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.InsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -436,7 +436,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -449,7 +449,7 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override int Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
+        public override System.Guid Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
         {
             return document.Id;
         }
@@ -461,13 +461,13 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadCommand(int id, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadCommand(System.Guid id, string tenant)
         {
             return new NpgsqlCommand(_loaderSql).With("id", id);
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Int32[] ids, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Guid[] ids, string tenant)
         {
             return new NpgsqlCommand(_loadArraySql).With("ids", ids);
         }
@@ -478,7 +478,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: LightweightTournamentSnapshotDocumentStorage2118757069
-    public class LightweightTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.LightweightDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class LightweightTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.LightweightDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly Marten.Schema.DocumentMapping _document;
 
@@ -489,7 +489,7 @@ namespace Marten.Generated.DocumentStorage
 
 
 
-        public override int AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
+        public override System.Guid AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
         {
             return document.Id;
         }
@@ -501,7 +501,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpdateTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -514,7 +514,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.InsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -527,7 +527,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -540,7 +540,7 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override int Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
+        public override System.Guid Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
         {
             return document.Id;
         }
@@ -552,13 +552,13 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadCommand(int id, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadCommand(System.Guid id, string tenant)
         {
             return new NpgsqlCommand(_loaderSql).With("id", id);
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Int32[] ids, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Guid[] ids, string tenant)
         {
             return new NpgsqlCommand(_loadArraySql).With("ids", ids);
         }
@@ -569,7 +569,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: IdentityMapTournamentSnapshotDocumentStorage2118757069
-    public class IdentityMapTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.IdentityMapDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class IdentityMapTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.IdentityMapDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly Marten.Schema.DocumentMapping _document;
 
@@ -580,7 +580,7 @@ namespace Marten.Generated.DocumentStorage
 
 
 
-        public override int AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
+        public override System.Guid AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
         {
             return document.Id;
         }
@@ -592,7 +592,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpdateTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -605,7 +605,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.InsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -618,7 +618,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -631,7 +631,7 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override int Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
+        public override System.Guid Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
         {
             return document.Id;
         }
@@ -643,13 +643,13 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadCommand(int id, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadCommand(System.Guid id, string tenant)
         {
             return new NpgsqlCommand(_loaderSql).With("id", id);
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Int32[] ids, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Guid[] ids, string tenant)
         {
             return new NpgsqlCommand(_loadArraySql).With("ids", ids);
         }
@@ -660,7 +660,7 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: DirtyTrackingTournamentSnapshotDocumentStorage2118757069
-    public class DirtyTrackingTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.DirtyCheckedDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class DirtyTrackingTournamentSnapshotDocumentStorage2118757069 : Marten.Internal.Storage.DirtyCheckedDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
         private readonly Marten.Schema.DocumentMapping _document;
 
@@ -671,7 +671,7 @@ namespace Marten.Generated.DocumentStorage
 
 
 
-        public override int AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
+        public override System.Guid AssignIdentity(TournamentManager.Domain.Tournaments.TournamentSnapshot document, string tenantId, Marten.Storage.IMartenDatabase database)
         {
             return document.Id;
         }
@@ -683,7 +683,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpdateTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -696,7 +696,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.InsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -709,7 +709,7 @@ namespace Marten.Generated.DocumentStorage
             return new Marten.Generated.DocumentStorage.UpsertTournamentSnapshotOperation2118757069
             (
                 document, Identity(document),
-                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>(),
+                session.Versions.ForType<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>(),
                 _document
                 
             );
@@ -722,7 +722,7 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override int Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
+        public override System.Guid Identity(TournamentManager.Domain.Tournaments.TournamentSnapshot document)
         {
             return document.Id;
         }
@@ -734,13 +734,13 @@ namespace Marten.Generated.DocumentStorage
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadCommand(int id, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadCommand(System.Guid id, string tenant)
         {
             return new NpgsqlCommand(_loaderSql).With("id", id);
         }
 
 
-        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Int32[] ids, string tenant)
+        public override Npgsql.NpgsqlCommand BuildLoadManyCommand(System.Guid[] ids, string tenant)
         {
             return new NpgsqlCommand(_loadArraySql).With("ids", ids);
         }
@@ -751,11 +751,11 @@ namespace Marten.Generated.DocumentStorage
     
     
     // START: TournamentSnapshotBulkLoader2118757069
-    public class TournamentSnapshotBulkLoader2118757069 : Marten.Internal.CodeGeneration.BulkLoader<TournamentManager.Domain.Tournaments.TournamentSnapshot, int>
+    public class TournamentSnapshotBulkLoader2118757069 : Marten.Internal.CodeGeneration.BulkLoader<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid>
     {
-        private readonly Marten.Internal.Storage.IDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, int> _storage;
+        private readonly Marten.Internal.Storage.IDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid> _storage;
 
-        public TournamentSnapshotBulkLoader2118757069(Marten.Internal.Storage.IDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, int> storage) : base(storage)
+        public TournamentSnapshotBulkLoader2118757069(Marten.Internal.Storage.IDocumentStorage<TournamentManager.Domain.Tournaments.TournamentSnapshot, System.Guid> storage) : base(storage)
         {
             _storage = storage;
         }
@@ -775,7 +775,7 @@ namespace Marten.Generated.DocumentStorage
         public override void LoadRow(Npgsql.NpgsqlBinaryImporter writer, TournamentManager.Domain.Tournaments.TournamentSnapshot document, Marten.Storage.Tenant tenant, Marten.ISerializer serializer)
         {
             writer.Write(document.GetType().FullName, NpgsqlTypes.NpgsqlDbType.Varchar);
-            writer.Write(document.Id, NpgsqlTypes.NpgsqlDbType.Integer);
+            writer.Write(document.Id, NpgsqlTypes.NpgsqlDbType.Uuid);
             writer.Write(Marten.Schema.Identity.CombGuidIdGeneration.NewGuid(), NpgsqlTypes.NpgsqlDbType.Uuid);
             writer.Write(serializer.ToJson(document), NpgsqlTypes.NpgsqlDbType.Jsonb);
         }
@@ -784,7 +784,7 @@ namespace Marten.Generated.DocumentStorage
         public override async System.Threading.Tasks.Task LoadRowAsync(Npgsql.NpgsqlBinaryImporter writer, TournamentManager.Domain.Tournaments.TournamentSnapshot document, Marten.Storage.Tenant tenant, Marten.ISerializer serializer, System.Threading.CancellationToken cancellation)
         {
             await writer.WriteAsync(document.GetType().FullName, NpgsqlTypes.NpgsqlDbType.Varchar, cancellation);
-            await writer.WriteAsync(document.Id, NpgsqlTypes.NpgsqlDbType.Integer, cancellation);
+            await writer.WriteAsync(document.Id, NpgsqlTypes.NpgsqlDbType.Uuid, cancellation);
             await writer.WriteAsync(Marten.Schema.Identity.CombGuidIdGeneration.NewGuid(), NpgsqlTypes.NpgsqlDbType.Uuid, cancellation);
             await writer.WriteAsync(serializer.ToJson(document), NpgsqlTypes.NpgsqlDbType.Jsonb, cancellation);
         }
