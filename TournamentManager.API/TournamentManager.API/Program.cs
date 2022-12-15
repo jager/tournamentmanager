@@ -20,6 +20,7 @@ builder.Services.AddExceptionHandling();
 builder.Services.AddDependencies();
 builder.Services.AddMediatR(Assembly.Load("TournamentManager.Application"));
 builder.Services.AddMartenDocumentStore(builder.Configuration);
+builder.Services.AddAuth0(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

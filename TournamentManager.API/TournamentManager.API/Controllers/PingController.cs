@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TournamentManager.API.Controllers;
 
@@ -13,6 +14,7 @@ public class PingController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public string Get()
     {
         return $"Alive: {Request.Host.Value}:{Request.Host.Port} " +
