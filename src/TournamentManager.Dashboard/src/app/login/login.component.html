@@ -1,1 +1,17 @@
 <p>login works!</p>
+<div *ngIf="authenticationError">
+  Invald login and/or password!
+</div>
+<form (ngSubmit)="onLogin()" #loginForm="ngForm">
+  <div class="form-group">
+    <label for="login">Login</label>
+    <input type="text" class="form-control" placeholder="Login" id="login" name="login" [(ngModel)]="User.UserName" />
+  </div>
+
+  <div class="form-group">
+    <label for="login">Password</label>
+    <input type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="User.Password" />
+  </div>
+  <button type="submit" class="btn btn-success" >Sign in</button>
+</form>
+<a href="#" (click)="onLogin()">Sign in</a>

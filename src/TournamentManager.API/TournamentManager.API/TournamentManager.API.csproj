@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TournamentManager.Application\TournamentManager.Application.csproj" />
     <ProjectReference Include="..\TournamentManager.Db.Pg.DocumentStore\TournamentManager.Db.Pg.DocumentStore.csproj" />
+    <ProjectReference Include="..\Webbers.Authentication\Webbers.Authentication.csproj" />
   </ItemGroup>
 
 </Project>

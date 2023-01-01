@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './auth/auth.guard';
+import { MainComponent } from './dashboard/main/main.component';
 import { CreateComponent } from './dashboard/tournaments/create/create.component';
 import { ListComponent } from './dashboard/tournaments/list/list.component';
 import { ViewComponent } from './dashboard/tournaments/view/view.component';
@@ -10,10 +11,11 @@ import { ReminderComponent } from './reminder/reminder.component';
 
 const routes: Routes = [
   { path: 'password-restore', component: ReminderComponent },
-  { path: 'tournaments',  component: ListComponent, canActivate: [ authGuard ] },
-  { path: 'tournaments/create', component: CreateComponent, canActivate: [ authGuard ] },
-  { path: 'tournaments/view/:id', component: ViewComponent, canActivate: [ authGuard ] },
+  { path: 'tournaments',  component: ListComponent, canActivate: [authGuard] },
+  { path: 'tournaments/create', component: CreateComponent, canActivate: [authGuard]  },
+  { path: 'tournaments/view/:id', component: ViewComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'main', component: MainComponent, canActivate: [authGuard] },
   { path: '', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
