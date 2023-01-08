@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tournamentmanager.api:
+    image: ${DOCKER_REGISTRY-}tournamentmanager
+    build:
+      context: .
+      dockerfile: TournamentManager.API/Dockerfile

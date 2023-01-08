@@ -26,4 +26,12 @@
     <ProjectReference Include="..\TournamentManager.Domain\TournamentManager.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Games\" />
+    <None Remove="Games\Fixtures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Games\" />
+    <Folder Include="Games\Fixtures\" />
+  </ItemGroup>
 </Project>
