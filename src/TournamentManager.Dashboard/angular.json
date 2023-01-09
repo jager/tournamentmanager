@@ -25,9 +25,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/adminlte/dist/css/adminlte.min.css",
+              "src/assets/plugins/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js",
+              "src/assets/adminlte/dist/js/adminlte.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,4 +1,6 @@
-<app-header *ngIf="AuthService.isLoggedIn()"></app-header>
-<app-nav *ngIf="AuthService.isLoggedIn()"></app-nav>
-<router-outlet></router-outlet>
-<app-footer *ngIf="AuthService.isLoggedIn()"></app-footer>
+<div class="wrapper">
+  <app-header *ngIf="AuthService.isLoggedIn()"></app-header>
+  <app-nav *ngIf="AuthService.isLoggedIn()"></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer *ngIf="AuthService.isLoggedIn()"></app-footer>
+</div>
